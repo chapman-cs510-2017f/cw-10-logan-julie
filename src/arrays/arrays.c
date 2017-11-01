@@ -1,20 +1,24 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
+void print_arrays(int array_size, float *array, long double *memblock, const char *foo);
+int set_arrays(int array_size);
+
 int main(void)
 {
     int i; // Iteration index
     
     /* Array syntax for defining an array */
     int array_size = 10;
-    int array[array_size];
+    float array[array_size];
     /* End array syntax declaration */
 
     /* Explicit memory allocation for defining the same array */
     
     // Allocate a block of array_size integers and assign the address
     // of the beginning of the memory block to the pointer memblock
-    int *memblock = malloc(array_size * sizeof(int));
+    long double *memblock = malloc(array_size * sizeof(int));
     /* WARNING: malloc may fail and return a NULL value for the pointer
                 Good programming practice mandates checking for such failures.
     */
@@ -43,16 +47,27 @@ int main(void)
     }
     /* End fill with integers */
 
-    /* Print out results to verify exactly what the above code did */
+    print_arrays(array_size, array, memblock, foo);
+    
+    // explicitly free the block of memory malloc-ed at memblock 
+    free(memblock);
 
+    // memory not explicitly freed is automatically freed on function exit
+    return 0;
+}
+
+void print_arrays(int array_size, float *array, long double *memblock,  const char *foo)
+{
+    /* Print out results to verify exactly what the above code did */
+    int i;
     // Note: this increments three bytes BEYOND the allocated memory (buffer overrun)
     for (i=0; i < (array_size + 3); i++)
     {
         // print the array values using array syntax
-        printf("array[%d] : %d\t", i, array[i]);
+        printf("array[%d] : %f\t", i, array[i]);
         
         // print values contained in each memory address starting at memblock 
-        printf("*(memblock + %d) : %d\t", i, *(memblock+i));
+        printf("*(memblock + %d) : %Lf\t", i, *(memblock+i));
         
         // print each character in the string using array syntax
         printf("foo[%d] : %c\t", i, foo[i]);
@@ -60,10 +75,9 @@ int main(void)
         // do the same thing as above, but in memory pointer notation
         printf("*(foo + %d) : %c\n", i, *(foo+i));
     }
-    
-    // explicitly free the block of memory malloc-ed at memblock 
-    free(memblock);
+}
 
-    // memory not explicitly freed is automatically freed on function exit
-    return 0;
+int set_arrays(int array_size)
+{
+    
 }
