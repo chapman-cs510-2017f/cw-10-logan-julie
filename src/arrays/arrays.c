@@ -3,7 +3,7 @@
 
 
 void print_arrays(int array_size, float *array, long double *memblock, const char *foo);
-int set_arrays(int array_size);
+int set_arrays(float *array, long double *memblock, int array_size);
 
 int main(void)
 {
@@ -29,23 +29,7 @@ int main(void)
       return -1;
     }
 
-    /* End explicit memory allocation declaration */
-    
-    /* String example showing the two methods are equivalent */
-    // constant character array (i.e., a string)
     const char *foo = "Foo bar .";
-    /* End string declaration as array of characters */
-    
-    /* Fill declared arrays with integers */
-    for (i=0; i < array_size; i++)
-    {
-        // assign the value i to the ith element 
-        array[i] = i;
-        
-        // set the value inside the memory address at memblock + (i bytes) to i
-        *(memblock+i) = i;
-    }
-    /* End fill with integers */
 
     print_arrays(array_size, array, memblock, foo);
     
@@ -56,7 +40,7 @@ int main(void)
     return 0;
 }
 
-void print_arrays(int array_size, float *array, long double *memblock,  const char *foo)
+void print_arrays(int array_size, float *array, long double *memblock, const char *foo)
 {
     /* Print out results to verify exactly what the above code did */
     int i;
@@ -77,7 +61,24 @@ void print_arrays(int array_size, float *array, long double *memblock,  const ch
     }
 }
 
-int set_arrays(int array_size)
+int set_arrays(float *array, long double *memblock, int array_size)
 {
+    int i;
+
+    /* String example showing the two methods are equivalent */
+    // constant character array (i.e., a string)
+
+    /* End string declaration as array of characters */
+    
+    /* Fill declared arrays with integers */
+    for (i=0; i < array_size; i++)
+    {
+        // assign the value i to the ith element 
+        array[i] = i;
+        
+        // set the value inside the memory address at memblock + (i bytes) to i
+        *(memblock+i) = i;
+    }
+    /* End fill with integers */
     
 }
