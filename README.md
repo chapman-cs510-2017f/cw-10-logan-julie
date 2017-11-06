@@ -42,7 +42,7 @@ Complete the following exercises, saving your solutions in the indicated files.
 
 ## Assessment
 
-This was an interesting assignment. We had a bit of trouble figuring out what was supposed to go in our set_arrays function.
+This was an interesting assignment. We had a little bit of trouble figuring out what was supposed to go in our set_arrays function.
 
 ## Honor Pledge
 
