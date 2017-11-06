@@ -1,8 +1,12 @@
 # CS510 CW 10
 
-**Author(s):** **CHANGEME**
+Name: Julie Gardner-Hoag, Logan Gantner <br>
+Student ID: 2299636, 2307470 <br>
+Email: gardnerh@chapman.edu, gantner@chapman.edu <br>
+Course: CS510 Fall 2017 <br>
 
-[![Build Status](https://travis-ci.org/chapman-cs510-2017f/cw-10-YOURNAME.svg?branch=master)](https://travis-ci.org/chapman-cs510-2017f/cw-10-YOURNAME)
+
+[![Build Status](https://travis-ci.org/chapman-cs510-2017f/cw-10-logan-julie.svg?branch=master)](https://travis-ci.org/chapman-cs510-2017f/cw-10-logan-julie)
 
 ## Specification
 
@@ -38,9 +42,7 @@ Complete the following exercises, saving your solutions in the indicated files.
 
 ## Assessment
 
-Analyze in this section what you found useful about this assignment in your own words. Include any lingering questions or comments that you may have.
-
-**CHANGEME**
+This was an interesting assignment. We had a bit of trouble figuring out what was supposed to go in our set_arrays function.
 
 ## Honor Pledge
 
@@ -51,4 +53,4 @@ I pledge that all the work in this repository is my own with only the following 
 
 Signed,
 
-**YOURNAME**
+Julie Gardner-Hoag, Logan Gantner
